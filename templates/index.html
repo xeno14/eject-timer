@@ -1,0 +1,15 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app.css') }}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+<input type="button" id="start" value="Start"></input>
+<input type="button" id="pause" value="Pause"></input>
+<input type="button" id="clear" value="Clear"></input>
+<input type="button" id="plus"  value="+30"></input>
+<input type="button" id="minus" value="-30"></input>
+<div id="time">00:00</div>
+</body>
+</html>
