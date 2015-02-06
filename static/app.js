@@ -15,6 +15,7 @@ function countStart() {
 function countClear() {
   stopTimer();
   writeTime(0);
+  closeTray();
 }
 
 function countPause() {
@@ -22,7 +23,7 @@ function countPause() {
 }
 
 function onCountStopped() {
-  alert("finished!");
+  eject();
 }
 
 function timer() {
@@ -59,7 +60,27 @@ function writeTime(totalSec) {
   $("#time").text(min + ":" + sec);
 }
 
+function eject() {
+  $.ajax({
+    type: "GET",
+    url: "/eject",
+    success: function(msg) {
+      alert(msg);
+    }
+  });
+}
+
+function closeTray() {
+  $.ajax({
+    type: "GET",
+    url: "/close",
+    success: function(msg) {}
+  });
+}
+
 $(function() {
+  closeTray();
+
   writeTime(getTotalSeconds());
   $("#start").click(function() {
     countStart();
